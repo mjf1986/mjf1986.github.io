@@ -1,5 +1,5 @@
 # Site settings 配置站点
-title: '莫剑锋的独立博客'
+title: '莫剑锋的博客'
 description: '这家伙很赖，没有留下描述'
 keyword: '莫剑锋, 莫剑锋的独立博客, BlockChain, CLang, GoLang, P2P, SHA256, 去中心化, Token, OpenSource'
 url: 'http://www.jianfengmo.info' # your host
@@ -19,7 +19,7 @@ footer:
 # Author 配置博主信息
 author: '莫剑锋'
 nickname: 'Jimmy'
-bio: '这家伙很赖'
+bio: '高级开发工程师，目前专注于BlockChain的探索与学习'
 avatar: '/assets/img/profile.png'
 
 # Search
@@ -41,7 +41,7 @@ comments:
 # Reward 赞赏功能 by Ray-Eldath
 reward:
   enable: true
-  reward_comment: '真诚打赏 手有余香'
+  reward_comment: '如果您觉得我的文章不错，请打赏一下'
   reward_btcaddr: '比特币打赏地址:1645kDppw93rKo8FRiZSPxej3dQpzxDQA6'
   reward_ethaddr: '以太坊打赏地址:0x0D90C37Bb63b70228D853e89ecBc4e43EC7E2681'
   btcpay: '/assets/img/btcaddr.png'
