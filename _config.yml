@@ -2,7 +2,7 @@
 title: '莫剑锋的独立博客'
 description: '这家伙很赖，没有留下描述'
 keyword: '莫剑锋, 莫剑锋的独立博客, BlockChain, CLang, GoLang, P2P, SHA256, 去中心化, Token, OpenSource'
-url: 'www.jianfengmo.info' # your host
+url: 'http://www.jianfengmo.info' # your host
 
 # if you don't need baseurl, you should leave this value blank.
 baseurl: ''
