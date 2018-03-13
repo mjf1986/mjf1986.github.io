@@ -53,22 +53,32 @@ refer to:
   <div class="QR">
     {% if site.reward.reward_comment %}
     <div>
-      <span style="font-family: '微软雅黑'; font-size: 18px; ">{{ site.reward.reward_comment }}</span>
+      <span style="font-family: '微软雅黑'; font-size: 16px; ">{{ site.reward.reward_comment }}</span>
+    </div>
+    {% endif %}
+      {% if site.reward.reward_btcaddr %}
+    <div>
+      <span style="font-family: '微软雅黑'; font-size: 16px; ">{{ site.reward.reward_btcaddr }}</span>
+    </div>
+    {% endif %}
+    {% if site.reward.reward_ethaddr %}
+    <div>
+      <span style="font-family: '微软雅黑'; font-size: 16px; ">{{ site.reward.reward_ethaddr }}</span>
     </div>
     {% endif %}
 
     <div class="reward-outer">
-        {% if site.reward.wechatpay %}
+        {% if site.reward.btcpay %}
         <div class="wechat" style="display: inline-block">
-            <img class="wechat_qr" src="{{ site.reward.wechatpay }}" title="用微信请{{ site.author }}喝杯咖啡？" alt="用微信请{{ site.author }}喝杯咖啡？" />
-            <p>微信支付</p>
+            <img class="btcpay_qr" src="{{ site.reward.btcpay }}" title="用BTC请{{ site.author }}喝杯咖啡？" alt="BTC{{ site.author }}喝杯咖啡？" />
+            <p>用比特币打赏</p>
         </div>
         {% endif %}
 
-        {% if site.reward.alipay %}
+        {% if site.reward.ethpay %}
         <div class="alipay" style="display: inline-block">
-            <img class="alipay_qr" src="{{ site.reward.alipay }}" title="用支付宝请{{ site.author }}喝杯咖啡？" alt="用支付宝请{{ site.author }}喝杯咖啡？" />
-            <p>支付宝</p>
+            <img class="ethpay_qr" src="{{ site.reward.ethpay }}" title="用Eth请{{ site.author }}喝杯咖啡？" alt="用Eth请{{ site.author }}喝杯咖啡？" />
+            <p>用以太坊打赏</p>
         </div>
         {% endif %}
     </div>

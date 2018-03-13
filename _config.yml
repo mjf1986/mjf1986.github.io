@@ -41,9 +41,11 @@ comments:
 # Reward 赞赏功能 by Ray-Eldath
 reward:
   enable: true
-  reward_comment: '真诚赞赏 手有余香'
-  wechatpay: 'http://ray-eldath.image.alimmdn.com/basic/wechatpay.jpg'
-  alipay: 'http://ray-eldath.image.alimmdn.com/basic/alipay.jpg'
+  reward_comment: '真诚打赏 手有余香'
+  reward_btcaddr: '比特币打赏地址:1645kDppw93rKo8FRiZSPxej3dQpzxDQA6'
+  reward_ethaddr: '以太坊打赏地址:0x0D90C37Bb63b70228D853e89ecBc4e43EC7E2681'
+  btcpay: '/assets/img/btcaddr.png'
+  ethpay: '/assets/img/ethaddr.png'
 
 # b2t 回到顶部 by Ray-Eldath
 b2t: true
@@ -63,11 +65,11 @@ postPatterns: 'circuitBoard'
 
 # SNS settings 配置社交网站url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
 sns:
-  email: 'mailto:ray.eldath@aol.com'
-  weibo: '//weibo.com/lovecolcol'
-  juejin: '//juejin.im/user/57a6f434165abd006159b4cc'
-  instagram: '//www.instagram.com/steveliaocn'
-  github: '//github.com/kaeyleo'
+  email: 'mailto:mjf1986@126.com'
+  github: '//github.com/mjf1986'
+  twitter: '//twitter.com/gimfong_'
+  weibo: '//weibo.com/babask'
+  jianshu: '//www.jianshu.com/u/a8f9e6f31ef5'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar
