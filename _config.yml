@@ -1,6 +1,6 @@
 # Site settings
-title: Mo's Blog
-SEOTitle: Mo's Blog | Think For BlockChain
+title: Jeff's Blog
+SEOTitle: Jeff's Blog | Think For BlockChain
 header-img: img/home-bg.jpg
 email: mjf1986@126.com
 description: "Coder | 莫剑锋，BlockChian Leraner，Software Engineer| 这里是 @莫剑锋 的个人博客，与你一起发现更大的世界。"
@@ -12,8 +12,8 @@ baseurl: ""                             # for example, '/blog' if your blog host
 
 # SNS settings
 RSS: false
-weibo_username:     _栖息地_
-zhihu_username:     mjf1986
+weibo_username:     babask
+zhihu_username:     momomjf1986
 github_username:    mjf1986
 twitter_username:   gimfong_
 #facebook_username:  mjf1986
