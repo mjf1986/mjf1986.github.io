@@ -11,6 +11,7 @@ layout: default
 <div class="g-banner tags-banner {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }}" data-theme="{{ site.theme-color }}">
     <h2>{{ page.home-title }}</h2>
 </div>
+
 <ul class="list-unstyled">
      {% for post in site.posts limit:100 %} 
 	 {% unless post.next %} 
