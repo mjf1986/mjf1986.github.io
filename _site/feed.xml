@@ -5,13 +5,102 @@
     <description>Coder | 莫剑锋，BlockChian Leraner，Software Engineer| 这里是 @莫剑锋 的个人博客，与你一起发现更大的世界。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 14 Mar 2018 22:18:59 +0800</pubDate>
-    <lastBuildDate>Wed, 14 Mar 2018 22:18:59 +0800</lastBuildDate>
+    <pubDate>Mon, 02 Apr 2018 18:00:03 +0800</pubDate>
+    <lastBuildDate>Mon, 02 Apr 2018 18:00:03 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
+        <title>My First Markdown Article</title>
+        <description>&lt;h1 id=&quot;my-first-markdown-article&quot;&gt;My First Markdown Article&lt;/h1&gt;
+
+&lt;h2 id=&quot;tool&quot;&gt;Tool&lt;/h2&gt;
+
+&lt;p&gt;I search which one is  suitable for my macOS, so I got &lt;a href=&quot;https://typora.io/&quot;&gt;Typora Editor&lt;/a&gt; from Zhihu &lt;a href=&quot;https://www.zhihu.com/question/22700184&quot;&gt;Mac 上最好的 Markdown 文本编辑器是什么？&lt;/a&gt;. I installed it, and now is Practicing to write Markdown in Typora Editor.&lt;/p&gt;
+
+&lt;h2 id=&quot;knowledge-points&quot;&gt;Knowledge points&lt;/h2&gt;
+
+&lt;p&gt;I learned how to write in markdown format from this &lt;a href=&quot;https://daringfireball.net/projects/markdown/basics&quot;&gt;website.&lt;/a&gt;.Which shows me how to basic operations.The following list skill is to be learned.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;images&quot;&gt;Images&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://typora.io/img/new/image.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;![image](your image url)&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;Mark:here for me is not easy to find the key to type “``” .I don’t know how to center the text.I try the html format to center the abvoe line：&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;center&amp;gt;![image](your image url)&amp;lt;/center&amp;gt;&lt;/code&gt;, but it failed.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;headers&quot;&gt;Headers&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://typora.io/img/new/toc.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;lists&quot;&gt;Lists&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://typora.io/img/new/lists.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;tables&quot;&gt;Tables&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://typora.io/img/new/table.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;code-fences&quot;&gt;Code Fences&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://typora.io/img/new/fences.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;mathematics&quot;&gt;Mathematics&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://typora.io/img/new/math.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;diagrams&quot;&gt;Diagrams&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://typora.io/img/new/diagram.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4 id=&quot;inline-styles&quot;&gt;Inline Styles.&lt;/h4&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://typora.io/img/new/inline.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;plans&quot;&gt;Plans&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;h5 id=&quot;learn-writting-skill&quot;&gt;learn writting skill.&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5 id=&quot;read-some-book-about-blockchainect-i-read-the-book-精通比特币&quot;&gt;read some book about blockchain.ect. I read the book &lt;a href=&quot;http://book.8btc.com/books/1/master_bitcoin/_book/6/6.html&quot;&gt;&lt;em&gt;《精通比特币》&lt;/em&gt;&lt;/a&gt;&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5 id=&quot;read-some-fucking-open-source-code-about-blockchain-especally-bitcoin&quot;&gt;read some fucking open source code about blockchain. especally &lt;a href=&quot;https://github.com/bitcoin&quot;&gt;bitcoin&lt;/a&gt;.&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h5 id=&quot;i-have-to-write-some-articles-in-my-blog-&quot;&gt;I have to write some articles in my blog .&lt;/h5&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 02 Apr 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/skill/2018/04/02/markdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/skill/2018/04/02/markdown/</guid>
+        
+        <category>Markdown</category>
+        
+        
+        <category>Skill</category>
+        
+      </item>
+    
+      <item>
         <title>莫剑锋的测试</title>
-        <description>&lt;p&gt;不管那么多&lt;/p&gt;
+        <description>&lt;p&gt;测试&lt;/p&gt;
+&lt;h1 id=&quot;my-first-markdown-article&quot;&gt;My First Markdown Article&lt;/h1&gt;
+
 </description>
         <pubDate>Mon, 12 Mar 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/%E6%B5%8B%E8%AF%95/2018/03/12/mjf/</link>
