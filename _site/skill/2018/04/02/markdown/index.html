@@ -211,7 +211,7 @@
 
 <h2 id="knowledge-points">Knowledge points</h2>
 
-<p>I learned how to write in markdown format from this <a href="https://daringfireball.net/projects/markdown/basics">website.</a>.Which shows me how to basic operations.The following list skill is to be learned.</p>
+<p>I learned how to write in markdown format from this <a href="http://support.typora.io/Markdown-Reference/">website.</a>.Which shows me how to basic operations.The following list skill is to be learned.</p>
 
 <ul>
   <li>
@@ -219,29 +219,73 @@
 
     <p><img src="https://typora.io/img/new/image.png" alt="image" /></p>
 
-    <p><code class="highlighter-rouge">![image](your image url)</code></p>
+    <p style="text-align:center"><code>![image](your image url)</code></p>
 
-    <p>Mark:here for me is not easy to find the key to type “``” .I don’t know how to center the text.I try the html format to center the abvoe line：<code class="highlighter-rouge">&lt;center&gt;![image](your image url)&lt;/center&gt;</code>, but it failed.</p>
+    <p>Mark:here for me is not easy to find the key to type “``” .I don’t know how to center the text.Now I know Markdown doesn’t support text alignment.I try the html format to center the abvoe line：<code class="highlighter-rouge">&lt;center&gt;![image](your image url)&lt;/center&gt;</code>, but it failed.So I used <code class="highlighter-rouge">&lt;p style="text-align:center"&gt;&lt;code&gt;![image](your image url)&lt;/code&gt;&lt;/p&gt;</code>.</p>
   </li>
   <li>
     <h4 id="headers">Headers</h4>
 
     <p><img src="https://typora.io/img/new/toc.png" alt="image" /></p>
+
+    <p>Using like this</p>
+
+    <blockquote>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A First Level Header
+====================
+A Second Level Header
+---------------------
+### Header 3
+</code></pre></div>      </div>
+    </blockquote>
   </li>
   <li>
     <h4 id="lists">Lists</h4>
 
     <p><img src="https://typora.io/img/new/lists.png" alt="image" /></p>
+
+    <p>​</p>
+
+    <p>Simple List is easy to learn.  Sorry to find that web page doesn’t support for Task List.</p>
+
+    <p>​</p>
   </li>
   <li>
     <h4 id="tables">Tables</h4>
 
     <p><img src="https://typora.io/img/new/table.png" alt="image" /></p>
+
+    <p>| First Header | Second Header |
+| ———— | ————- |
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
+​</p>
+
+    <p>Using like this:Fuck！Web page dosen’t uspport!!!</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  | First Header  | Second Header |
+  | ------------- | ------------- |
+  | Content Cell  | Content Cell  |
+  | Content Cell  | Content Cell  |
+</code></pre></div>    </div>
   </li>
+  <li>
+    <h4 id="horizontal-rules">Horizontal Rules</h4>
+    <hr />
+  </li>
+</ul>
+
+<p>Input *** or — on a blank line and press return will draw a horizontal line.</p>
+<ul>
   <li>
     <h4 id="code-fences">Code Fences</h4>
 
     <p><img src="https://typora.io/img/new/fences.png" alt="image" /></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"notice the blank line before this function?"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
   </li>
   <li>
     <h4 id="mathematics">Mathematics</h4>
@@ -264,7 +308,7 @@
 
 <ol>
   <li>
-    <h5 id="learn-writting-skill">learn writting skill.</h5>
+    <h5 id="learn-writting-skill-continuously-and-update-this-article">learn writting skill continuously and update this article.</h5>
   </li>
   <li>
     <h5 id="read-some-book-about-blockchainect-i-read-the-book-精通比特币">read some book about blockchain.ect. I read the book <a href="http://book.8btc.com/books/1/master_bitcoin/_book/6/6.html"><em>《精通比特币》</em></a></h5>
