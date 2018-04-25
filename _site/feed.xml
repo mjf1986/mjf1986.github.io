@@ -5,8 +5,8 @@
     <description>Coder | 莫剑锋，BlockChian Leraner，Software Engineer| 这里是 @莫剑锋 的个人博客，与你一起发现更大的世界。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 24 Apr 2018 23:20:21 +0800</pubDate>
-    <lastBuildDate>Tue, 24 Apr 2018 23:20:21 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Apr 2018 10:00:20 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Apr 2018 10:00:20 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -17,7 +17,11 @@
 
 &lt;h2 id=&quot;引子&quot;&gt;引子&lt;/h2&gt;
 
-&lt;p&gt;​        北大某学生申请公开二十年前教授性侵女学生导致自杀受处分原委，学校对其进行施压。该学生选择通过各公共媒体进行发声，不过，声明发布不到一天，点击页面都无法显示。昨晚，这篇发布于各个公开媒体被删除的原文，被写在了以太坊区块链上。 点击区块链浏览器查看：https://etherscan.io/tx/0x2d6a7b0f6adeff38423d4c62cd8b6ccb708ddad85da5d3d06756ad4d8a04a6a2 在该交易地址的Input Data下方，点击Convert To Ascii，便出现了英文原文： 由此，这篇公开信被永远写在了以太坊区块链上，永不消除，无法篡改。&lt;/p&gt;
+&lt;p&gt;​        北大某学生申请公开二十年前教授性侵女学生导致自杀受处分原委，学校对其进行施压。该学生选择通过各公共媒体进行发声，不过，声明发布不到一天，点击页面都无法显示。昨晚，这篇发布于各个公开媒体被删除的原文，被写在了以太坊区块链上。 点击区块链浏览器&lt;a href=&quot;https://etherscan.io/tx/0x2d6a7b0f6adeff38423d4c62cd8b6ccb708ddad85da5d3d06756ad4d8a04a6a2&quot;&gt;查看&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;https://etherscan.io/tx/0x2d6a7b0f6adeff38423d4c62cd8b6ccb708ddad85da5d3d06756ad4d8a04a6a2&lt;/p&gt;
+
+&lt;p&gt;在该交易地址的Input Data下方，点击Convert To Ascii，便出现了英文原文： 由此，这篇公开信被永远写在了以太坊区块链上，永不消除，无法篡改。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/mjf1986/mjf1986.github.io/blob/master/img/image-201804242300066.png?raw=true&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
 
@@ -70,11 +74,13 @@
 
 &lt;p&gt;#####&lt;/p&gt;
 </description>
-        <pubDate>Mon, 02 Apr 2018 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/skill/2018/04/02/markdown/</link>
-        <guid isPermaLink="true">http://localhost:4000/skill/2018/04/02/markdown/</guid>
+        <pubDate>Wed, 25 Apr 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/skill/2018/04/25/markdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/skill/2018/04/25/markdown/</guid>
         
-        <category>Markdown</category>
+        <category>Blockchain</category>
+        
+        <category>Ethereum</category>
         
         
         <category>Skill</category>
