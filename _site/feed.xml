@@ -5,9 +5,54 @@
     <description>Coder | 莫剑锋，BlockChian Leraner，Software Engineer| 这里是 @莫剑锋 的个人博客，与你一起发现更大的世界。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 25 Apr 2018 10:13:51 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Apr 2018 10:13:51 +0800</lastBuildDate>
+    <pubDate>Fri, 11 May 2018 22:49:23 +0800</pubDate>
+    <lastBuildDate>Fri, 11 May 2018 22:49:23 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>HD Wallet的BIP32, BIP39, BIP44</title>
+        <description>&lt;h1 id=&quot;hd-wallet的bip32-bip39-bip44&quot;&gt;HD Wallet的BIP32, BIP39, BIP44&lt;/h1&gt;
+
+&lt;p&gt;Hierarchical Deterministic wallet (简称 “HD Wallet”)&lt;/p&gt;
+
+&lt;p&gt;BIP32：是一个系统可以从单一个 seed 产生一树状结构储存多组 keypairs（私钥和公钥）&lt;/p&gt;
+
+&lt;p&gt;BIP39：改进建议39，seed 用方便记忆和书写的单字表示，由12个单词组成，成为mnemonic code(phrase)，助记词。&lt;/p&gt;
+
+&lt;p&gt;BIP44：基于 BIP32 的系统，赋予树状结构中的各层特殊的意义。让同一个 seed 可以支援多币种、多帐户等。各层定义如下：&lt;/p&gt;
+
+&lt;p&gt;m / purpose’ / coin_type’ / account’ / change / address_index&lt;/p&gt;
+
+&lt;p&gt;其中的 purporse’ 固定是 44’，代表使用 BIP44。而 coin_type’ 用来表示不同币种，例如 Bitcoin 就是 0’，Ethereum 是 60’。&lt;/p&gt;
+
+&lt;p&gt;引用文章：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://book.8btc.com/books/1/master_bitcoin/_book/4/4.html&quot;&gt;http://book.8btc.com/books/1/master_bitcoin/_book/4/4.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ethfans.org/posts/from-BIP-to-ethereum-HD-wallet&quot;&gt;https://ethfans.org/posts/from-BIP-to-ethereum-HD-wallet&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在线编码：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://iancoleman.io/bip39/&quot;&gt;https://iancoleman.io/bip39/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 May 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/skill/2018/05/11/markdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/skill/2018/05/11/markdown/</guid>
+        
+        <category>Blockchain</category>
+        
+        <category>Ethereum</category>
+        
+        <category>Bitcoin</category>
+        
+        <category>BIP44</category>
+        
+        <category>BIP32</category>
+        
+        
+        <category>skill</category>
+        
+      </item>
     
       <item>
         <title>HEX &amp;&amp; UTF8 Converter</title>
