@@ -10,7 +10,7 @@
     <meta name="keywords"  content="莫剑锋, BlockChain, 区块链,  博客, 个人网站, 互联网, C++, GoLang">
     <meta name="theme-color" content="#000000">
     
-    <title>Swift学习笔记 - Jeff's Blog | Think For BlockChain</title>
+    <title>BTC钱包学习笔记 - Jeff's Blog | Think For BlockChain</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -179,7 +179,7 @@
                         <a class="tag" href="/tags/#Swift" title="Swift">Swift</a>
                         
                     </div>
-                    <h1>Swift学习笔记</h1>
+                    <h1>BTC钱包学习笔记</h1>
                     
                     
                     <h2 class="subheading"></h2>
@@ -205,254 +205,53 @@
                 <!-- Multi-Lingual -->
                 
 
-				<h1 id="swift学习笔记">Swift学习笔记</h1>
+				<h1 id="btc钱包学习笔记">BTC钱包学习笔记</h1>
 
-<ol>
-  <li>
-    <p>Swift中的字母采用的是Unicode编码。</p>
-  </li>
-  <li>
-    <p>使用关键字作为标识符，可以在关键字前后添加重音符号（`）</p>
+<p>全节点存储所有UTXO,utxo池</p>
 
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="p">`</span><span class="nv">class</span><span class="p">`</span> <span class="o">=</span> <span class="s">"Runoob"</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Swift对空格的使用有一定的<a href="https://www.runoob.com/swift/swift-basic-syntax.html">要求</a></p>
-  </li>
-  <li>
-    <p>字面量的含义</p>
-  </li>
-  <li>
-    <p>print全局函数</p>
+<p>轻钱包下载属于自己的utxo集：utxo类型包括coinbase utxo,common utxo
+创建一笔utxo，
+签名这笔utxo,
+广播已签名的utxo</p>
 
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">print</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="kt">Any</span><span class="o">...</span><span class="p">,</span> <span class="nv">separator</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">,</span> 
-                  <span class="nv">terminator</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">default</span><span class="p">)</span>
-</code></pre></div>    </div>
+<p>公钥-&gt;地址-&gt;锁定脚本
+uxto包含锁定脚本
+交易链条：这条链的形式是一笔交易消耗了先前的交易（父交易）的输出，并为随后的交易（子交易）创造了输出.
+孤立交易池</p>
 
-    <p>在字符串中可以使用括号与反斜线来插入变量.</p>
+<p>P2PKH 单签，1开头
+P2PK 挖矿
+P2SH 多签，3开头</p>
 
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">name</span> <span class="o">=</span> <span class="s">"菜鸟教程"</span>
-<span class="k">var</span> <span class="nv">site</span> <span class="o">=</span> <span class="s">"http://www.runoob.com"</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">的官网地址为：</span><span class="se">\(</span><span class="n">site</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-</code></pre></div>    </div>
+<p>ScriptSig：解锁脚本
+比特币客户端会通过同时执行锁定和解锁脚本来验证一笔交易</p>
 
-    <p>​</p>
-  </li>
-  <li>
-    <p>类型别名</p>
+<p>比特币地址的前缀是0（十六进制是0x00），而对私钥编码时前缀是128（十六进制是0x80）。</p>
 
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">typealias</span> <span class="kt">Feet</span> <span class="o">=</span> <span class="kt">Int</span>
-<span class="k">var</span> <span class="nv">distance</span><span class="p">:</span> <span class="kt">Feet</span> <span class="o">=</span> <span class="mi">100</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Swift 是一个类型安全（type safe）的语言。</p>
-  </li>
-  <li>
-    <p>Swift 可以推断出常量/变量类型</p>
-  </li>
-  <li>
-    <p><strong><a href="https://www.runoob.com/swift/swift-optionals.html">Swift 的可选（Optional）类型</a></strong></p>
+<p>公钥
+-&gt;
+SHA256-&gt;RIPEMD160(简称hash160),即(RIPEMD160(SHA256(K)))
+-&gt;
+Base58Check编码(Base58就是由不包括（0，O，l，I）的大小写字母和数字组成)
+-&gt;
+地址</p>
 
-    <ul>
-      <li>
-        <p>nil在可选类型对所有的类型都可用</p>
-      </li>
-      <li>
-        <p>强制解析</p>
-      </li>
-      <li>
-        <p>自动解析</p>
-      </li>
-      <li>
-        <p>可选绑定</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>常量定义时必须初始值。</p>
-  </li>
-  <li>
-    <p>区间运算符</p>
+<p>Wallet Import Format WIP 
+WIF 非压缩格式私钥，以5开头；WIF压缩格式（以K或L为前缀）</p>
 
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="s">"闭区间运算符:"</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">5</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">index</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="cm">/*1,2,3,4,5*/</span>
-<span class="p">}</span>
+<p>主私钥
+确定性钱包中，种子足够收回所有的已经产生的私钥</p>
 
-<span class="nf">print</span><span class="p">(</span><span class="s">"半开区间运算符:"</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">index</span> <span class="k">in</span> <span class="mi">1</span><span class="o">..&lt;</span><span class="mi">5</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">index</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="cm">/*1,2,3,4*/</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>循环：for-in 、repeat…while 、fallthrough、for 循环（swift3弃用）</p>
+<p>助记码 PBKDF2 种子 512bit</p>
 
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">index</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="k">repeat</span><span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span> <span class="s">"index 的值为 </span><span class="se">\(</span><span class="n">index</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="p">}</span><span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">20</span>
+<p>隔离见证（SegWit）</p>
 
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>空字符串. 可以使用字符串属性 isEmpty 来判断字符串是否为空</p>
+<p>扩展密钥可以简单地被储存并且表示为简单的将256位密钥与256位链码所并联的512位序列
+扩展密钥编码用的Base58Check使用特殊的版本号，这导致在Base58编码字符中，出现前缀“xprv”和“xpub”。这种前缀可以让编码更易被识别</p>
 
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 使用字符串字面量创建空字符串</span>
-<span class="k">var</span> <span class="nv">stringA</span> <span class="o">=</span> <span class="s">""</span>
-<span class="c1">// 实例化 String 类来创建空字符串</span>
-<span class="k">let</span> <span class="nv">stringB</span> <span class="o">=</span> <span class="kt">String</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">stringB</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">{</span>
-   <span class="nf">print</span><span class="p">(</span> <span class="s">"stringB 是空的"</span> <span class="p">)</span>
-<span class="p">}</span> 
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>字符串插值:反斜线为前缀的圆括号</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">varA</span>   <span class="o">=</span> <span class="mi">20</span>
-<span class="k">let</span> <span class="nv">constA</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="k">var</span> <span class="nv">varC</span><span class="p">:</span><span class="kt">Float</span> <span class="o">=</span> <span class="mf">20.0</span>
-<span class="k">var</span> <span class="nv">stringA</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">varA</span><span class="se">)</span><span class="s"> 乘于 </span><span class="se">\(</span><span class="n">constA</span><span class="se">)</span><span class="s"> 等于 </span><span class="se">\(</span><span class="n">varC</span> <span class="o">*</span> <span class="mi">100</span><span class="se">)</span><span class="s">"</span>
-<span class="nf">print</span><span class="p">(</span> <span class="n">stringA</span> <span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>字符串可以通过 <strong>+</strong> 号来连接</p>
-  </li>
-  <li>
-    <p>字符串长度使用 <strong>String.characters.count</strong>属性来计算</p>
-  </li>
-  <li>
-    <p>使用 <strong>==</strong> 来比较两个字符串是否相等</p>
-  </li>
-  <li>
-    <p>Swift 的字符数据类型为 Character。不能创建空的 Character（字符） 类型变量或常量</p>
-  </li>
-  <li>
-    <p>数组使用 append() 方法或者赋值运算符 += 在数组末尾添加元素</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">someInts</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
-<span class="n">someInts</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">someInts</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">someInts</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">40</span><span class="p">]</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>数组遍历.同时需要每个数据项的值和索引值，可以用String 的 enumerate() 方法</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="k">in</span> <span class="n">someStrs</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">"在 index = </span><span class="se">\(</span><span class="n">index</span><span class="se">)</span><span class="s"> 位置上的值为 </span><span class="se">\(</span><span class="n">item</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>字典：</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">someDict</span><span class="p">:[</span><span class="kt">Int</span><span class="p">:</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="s">"One"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s">"Two"</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s">"Three"</span><span class="p">]</span>
-<span class="k">var</span> <span class="nv">oldVal</span> <span class="o">=</span> <span class="n">someDict</span><span class="o">.</span><span class="nf">updateValue</span><span class="p">(</span><span class="s">"One 新的值"</span><span class="p">,</span> <span class="nv">forKey</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">var</span> <span class="nv">someDict</span><span class="p">:[</span><span class="kt">Int</span><span class="p">:</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="s">"One"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s">"Two"</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s">"Three"</span><span class="p">]</span>
-<span class="c1">//遍历</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">someDict</span> <span class="p">{</span>
-   <span class="nf">print</span><span class="p">(</span><span class="s">"字典 key </span><span class="se">\(</span><span class="n">key</span><span class="se">)</span><span class="s"> -  字典 value </span><span class="se">\(</span><span class="n">value</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">someDict</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">"字典 key </span><span class="se">\(</span><span class="n">key</span><span class="se">)</span><span class="s"> -  字典 (key, value) 对 </span><span class="se">\(</span><span class="n">value</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>函数：</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">funcname</span><span class="p">(</span><span class="n">形参</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">returntype</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>函数：元组作为函数返回值; 可选元组返回类型</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">minMax</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">min</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">max</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)?</span> <span class="p">{</span>
-	<span class="nf">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>函数：局部参数名前指定外部参数名.</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//firstArg是外部参数名 a是内部参数名</span>
-<span class="kd">func</span> <span class="nf">pow</span><span class="p">(</span><span class="n">firstArg</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">secondArg</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-   <span class="k">var</span> <span class="nv">res</span> <span class="o">=</span> <span class="n">a</span>
-   <span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">1</span><span class="o">..&lt;</span><span class="n">b</span> <span class="p">{</span>
-      <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span>
-   <span class="p">}</span>
-   <span class="nf">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
-   <span class="k">return</span> <span class="n">res</span>
-<span class="p">}</span>
-<span class="nf">pow</span><span class="p">(</span><span class="nv">firstArg</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="nv">secondArg</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>函数：可变参数</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">sum</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="kt">Int</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-	<span class="kt">Int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
-	<span class="k">for</span> <span class="n">a</span> <span class="k">in</span> <span class="n">input</span><span class="p">{</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="n">a</span>
-	<span class="p">}</span>
-    <span class="k">return</span> <span class="n">a</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"result:</span><span class="se">\(</span><span class="nf">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>函数：变量参数，可以在参数定义前加 inout 关键字</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">swapTwoInts</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">temporaryA</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">temporaryA</span>
-<span class="p">}</span>
-<span class="k">var</span> <span class="nv">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">var</span> <span class="nv">y</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nf">swapTwoInts</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"x 现在的值 </span><span class="se">\(</span><span class="n">x</span><span class="se">)</span><span class="s">, y 现在的值 </span><span class="se">\(</span><span class="n">y</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>函数类型</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">sum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="p">}</span>
-<span class="k">var</span> <span class="nv">addition</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">sum</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"输出结果: </span><span class="se">\(</span><span class="nf">addition</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">89</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>函数：将函数作为参数传递给另外一个参数</p>
-
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">sum</span><span class="p">(</span><span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="p">}</span>
-<span class="k">var</span> <span class="nv">addition</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">sum</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"输出结果: </span><span class="se">\(</span><span class="nf">addition</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">89</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-<span class="kd">func</span> <span class="nf">another</span><span class="p">(</span><span class="nv">addition</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">"输出结果: </span><span class="se">\(</span><span class="nf">addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nf">another</span><span class="p">(</span><span class="nv">addition</span><span class="p">:</span> <span class="n">sum</span><span class="p">,</span> <span class="nv">a</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">b</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>函数嵌套:函数式编程</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-</code></pre></div>    </div>
-
-    <p>​</p>
-  </li>
-</ol>
+<p>bip32
+Private parent key → private child key
+HMAC-SHA512</p>
 
 
                 <hr style="visibility: hidden;">
@@ -460,12 +259,19 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/skill/2018/05/11/markdown/" data-toggle="tooltip" data-placement="top" title="HD Wallet的BIP32, BIP39, BIP44">
+                        <a href="/skill/2018/05/22/markdown/" data-toggle="tooltip" data-placement="top" title="Swift学习笔记">
                         Previous<br>
-                        <span>HD Wallet的BIP32, BIP39, BIP44</span>
+                        <span>Swift学习笔记</span>
                         </a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/skill/2018/08/24/markdown/" data-toggle="tooltip" data-placement="top" title="搭建与运行以太坊私链">
+                        Next<br>
+                        <span>搭建与运行以太坊私链</span>
+                        </a>
+                    </li>
                     
                 </ul>
 
@@ -500,15 +306,13 @@
                         
         				
                         
-        				
-                        
                 				<a href="/tags/#Blockchain" title="Blockchain" rel="2">
                                     Blockchain
                                 </a>
                             
         				
                         
-                				<a href="/tags/#Ethereum" title="Ethereum" rel="2">
+                				<a href="/tags/#Ethereum" title="Ethereum" rel="3">
                                     Ethereum
                                 </a>
                             
@@ -518,6 +322,18 @@
                         
         				
                         
+        				
+                        
+                				<a href="/tags/#iOS" title="iOS" rel="2">
+                                    iOS
+                                </a>
+                            
+        				
+                        
+                				<a href="/tags/#Swift" title="Swift" rel="2">
+                                    Swift
+                                </a>
+                            
         				
                         
         				

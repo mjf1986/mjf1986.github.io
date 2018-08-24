@@ -10,7 +10,7 @@
     <meta name="keywords"  content="莫剑锋, BlockChain, 区块链,  博客, 个人网站, 互联网, C++, GoLang">
     <meta name="theme-color" content="#000000">
     
-    <title>莫剑锋的测试 - Jeff's Blog | Think For BlockChain</title>
+    <title>搭建与运行以太坊私链 - Jeff's Blog | Think For BlockChain</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/%E6%B5%8B%E8%AF%95/2018/03/12/mjf/">
+    <link rel="canonical" href="http://localhost:4000/skill/2018/08/24/markdown/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -174,15 +174,19 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#c++" title="c++">c++</a>
+                        <a class="tag" href="/tags/#Ethereum" title="Ethereum">Ethereum</a>
+                        
+                        <a class="tag" href="/tags/#blockchian" title="blockchian">blockchian</a>
+                        
+                        <a class="tag" href="/tags/#json" title="json">json</a>
                         
                     </div>
-                    <h1>莫剑锋的测试</h1>
+                    <h1>搭建与运行以太坊私链</h1>
                     
                     
                     <h2 class="subheading"></h2>
                     
-                    <span class="meta">Posted by Jeff's Blog on March 12, 2018</span>
+                    <span class="meta">Posted by Jeff's Blog on August 24, 2018</span>
                 </div>
             </div>
         </div>
@@ -203,22 +207,182 @@
                 <!-- Multi-Lingual -->
                 
 
-				<p>测试</p>
-<h1 id="my-first-markdown-article">My First Markdown Article</h1>
+				<h1 id="搭建与运行以太坊私链">搭建与运行以太坊私链</h1>
 
+<ol>
+  <li>
+    <p>####建立私链目录</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir gethtest
+$ cd gethtest
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>####配置创世文件genesis.json</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ touch genesis.json
+$ vi genesis.json
+</code></pre></div>    </div>
+
+    <p>拷贝以下内容：</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="s2">"chainId"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"homesteadBlock"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"eip155Block"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+		</span><span class="s2">"eip158Block"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+	</span><span class="s2">"alloc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="s2">"0xeb680f30715f347d4eb5cd03ac5eced297ac5046"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="s2">" balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">" 1000000000000 0000000000000000000"</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+	</span><span class="s2">"coinbase"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"difficulty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x01"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x777573686f756865"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"gasLimit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xffffffff"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000001"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"mixhash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"parentHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+	</span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>####指定区块链数据存放目录，并初始化</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir db
+$ geth --datadir "./db" init gensis.json
+</code></pre></div>    </div>
+
+    <p>看到以下结果便成功了</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INFO [08-24|10:39:18.427] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [08-24|10:39:18.446] Allocated cache and file handles         database=/Users/mjf1986/Downloads/gethtest/db/geth/chaindata cache=16 handles=16
+INFO [08-24|10:39:18.462] Writing custom genesis block 
+INFO [08-24|10:39:18.468] Persisted trie from memory database      nodes=1 size=153.00B time=822.831µs gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [08-24|10:39:18.470] Successfully wrote genesis state         database=chaindata                                           hash=aab8e5…a54b28
+INFO [08-24|10:39:18.470] Allocated cache and file handles         database=/Users/mjf1986/Downloads/gethtest/db/geth/lightchaindata cache=16 handles=16
+INFO [08-24|10:39:18.473] Writing custom genesis block 
+INFO [08-24|10:39:18.474] Persisted trie from memory database      nodes=1 size=153.00B time=95.707µs  gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [08-24|10:39:18.475] Successfully wrote genesis state         database=lightchaindata                                           hash=aab8e5…a54b28
+</code></pre></div>    </div>
+
+    <p>此时生成geth和keystore两个文件夹，目录结构如下</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ tree
+.
+├── db
+│   ├── geth
+│   │   ├── chaindata
+│   │   │   ├── 000001.log
+│   │   │   ├── CURRENT
+│   │   │   ├── LOCK
+│   │   │   ├── LOG
+│   │   │   └── MANIFEST-000000
+│   │   └── lightchaindata
+│   │       ├── 000001.log
+│   │       ├── CURRENT
+│   │       ├── LOCK
+│   │       ├── LOG
+│   │       └── MANIFEST-000000
+│   └── keystore
+└── gensis.json
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <h4 id="启动节点">启动节点</h4>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ geth --datadir "./db" --rpc --rpcaddr=0.0.0.0 --rpcport 8545 --rpccorsdomain "*" --rpcapi "eth, net, web3, personal, admin, shh, txpool, debug, miner" --nodiscover --maxpeers 30 --networkid 1981 --port 30303 --mine --minerthreads 1 --etherbase "0xeb680f30715f347d4eb5cd03ac5eced297ac5046" console
+</code></pre></div>    </div>
+
+    <p>这里启动了挖矿模式，看到小锤子说明已经开始挖矿。</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INFO [08-24|11:08:08.129] Maximum peer count                       ETH=30 LES=0 total=30
+INFO [08-24|11:08:08.145] Starting peer-to-peer node               instance=Geth/v1.8.13-stable/darwin-amd64/go1.10.3
+INFO [08-24|11:08:08.146] Allocated cache and file handles         database=/Users/mjf1986/Downloads/gethtest/db/geth/chaindata cache=768 handles=128
+INFO [08-24|11:08:08.181] Initialised chain configuration          config="{ChainID: 15 Homestead: 0 DAO: &lt;nil&gt; DAOSupport: false EIP150: &lt;nil&gt; EIP155: 0 EIP158: 0 Byzantium: &lt;nil&gt; Constantinople: &lt;nil&gt; Engine: unknown}"
+INFO [08-24|11:08:08.181] Disk storage enabled for ethash caches   dir=/Users/mjf1986/Downloads/gethtest/db/geth/ethash count=3
+INFO [08-24|11:08:08.181] Disk storage enabled for ethash DAGs     dir=/Users/mjf1986/.ethash                           count=2
+INFO [08-24|11:08:08.182] Initialising Ethereum protocol           versions="[63 62]" network=1981
+INFO [08-24|11:08:08.184] Loaded most recent local header          number=0 hash=aab8e5…a54b28 td=1
+INFO [08-24|11:08:08.184] Loaded most recent local full block      number=0 hash=aab8e5…a54b28 td=1
+INFO [08-24|11:08:08.184] Loaded most recent local fast block      number=0 hash=aab8e5…a54b28 td=1
+INFO [08-24|11:08:08.186] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [08-24|11:08:08.190] Starting P2P networking 
+INFO [08-24|11:08:08.191] RLPx listener up                         self="enode://bda460dfde90f467642a4708a8117982e15ecb68e07f840c6e9952a9ea503ba4946fc91fd49b2f51fdad198f894da8ab202fbbbc31c679e5e2982127c0188c15@[::]:30303?discport=0"
+INFO [08-24|11:08:08.203] IPC endpoint opened                      url=/Users/mjf1986/Downloads/gethtest/db/geth.ipc
+INFO [08-24|11:08:08.204] HTTP endpoint opened                     url=http://0.0.0.0:8545                           cors=* vhosts=localhost
+INFO [08-24|11:08:08.204] Transaction pool price threshold updated price=18000000000
+INFO [08-24|11:08:08.204] Starting mining operation 
+INFO [08-24|11:08:08.206] Commit new mining work                   number=1 txs=0 uncles=0 elapsed=1.867ms
+INFO [08-24|11:08:08.231] Mapped network port                      proto=tcp extport=30303 intport=30303 interface=NAT-PMP(192.168.31.1)
+Welcome to the Geth JavaScript console!
+
+instance: Geth/v1.8.13-stable/darwin-amd64/go1.10.3
+coinbase: 0xeb680f30715f347d4eb5cd03ac5eced297ac5046
+at block: 0 (Thu, 01 Jan 1970 08:00:00 CST)
+ datadir: /Users/mjf1986/Downloads/gethtest/db
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
+
+&gt; INFO [08-24|11:08:11.010] Generating DAG in progress               epoch=0 percentage=0 elapsed=1.709s
+INFO [08-24|11:08:12.768] Generating DAG in progress               epoch=0 percentage=1 elapsed=3.468s
+INFO [08-24|11:08:14.352] Generating DAG in progress               epoch=0 percentage=2 elapsed=5.052s
+INFO [08-24|11:08:15.955] Generating DAG in progress               epoch=0 percentage=3 elapsed=6.655s
+……
+INFO [08-24|11:12:52.011] Successfully sealed new block            number=9 hash=d4a482…4af928
+INFO [08-24|11:12:52.014] 🔗 block reached canonical chain          number=4 hash=5b54ef…e46551
+INFO [08-24|11:12:52.014] 🔨 mined potential block                  number=9 hash=d4a482…4af928
+……
+</code></pre></div>    </div>
+
+    <p>这里提一下Ethash挖矿流程：</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>区块头-&gt;种子-&gt;16M随机数Cache-&gt;1GB数据集DAG-&gt;从DAG选择元素哈希-&gt;验证哈希结果小于某个值
+</code></pre></div>    </div>
+
+    <p>Cache 和 DAG 每一个 周期 更新 一次， 每 30000 个 块 更新 一次。 也就是说 这 30000 个 块 产生 的 Cache 和 DAG 是 完全 一样 的， 因此 挖 矿 的 主要 工作 在于 从 DAG 中 读取 数据， 而 不是 更新 Cache 和 DAG， DAG 的 大小 随时 间的 推移 线性 增长。</p>
+  </li>
+  <li>
+    <p>####进入JavaScript平台，在此使用以太坊内置对象进行交互。</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ geth --datadir './db' attach ipc:./db/geth.ipc
+
+Welcome to the Geth JavaScript console!
+
+instance: Geth/v1.8.13-stable/darwin-amd64/go1.10.3
+coinbase: 0xeb680f30715f347d4eb5cd03ac5eced297ac5046
+at block: 187 (Fri, 24 Aug 2018 11:22:07 CST)
+ datadir: /Users/mjf1986/Downloads/gethtest/db
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
+
+&gt; 
+
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <h4 id="退出以太坊">退出以太坊</h4>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; exit
+</code></pre></div>    </div>
+
+    <p>​</p>
+  </li>
+</ol>
 
 
                 <hr style="visibility: hidden;">
 
                 <ul class="pager">
                     
-                    
-                    <li class="next">
-                        <a href="/skill/2018/04/02/markdown/" data-toggle="tooltip" data-placement="top" title="My First Markdown Article">
-                        Next<br>
-                        <span>My First Markdown Article</span>
+                    <li class="previous">
+                        <a href="/skill/2018/05/22/markdown/" data-toggle="tooltip" data-placement="top" title="BTC钱包学习笔记">
+                        Previous<br>
+                        <span>BTC钱包学习笔记</span>
                         </a>
                     </li>
+                    
                     
                 </ul>
 
@@ -253,15 +417,13 @@
                         
         				
                         
-        				
-                        
                 				<a href="/tags/#Blockchain" title="Blockchain" rel="2">
                                     Blockchain
                                 </a>
                             
         				
                         
-                				<a href="/tags/#Ethereum" title="Ethereum" rel="2">
+                				<a href="/tags/#Ethereum" title="Ethereum" rel="3">
                                     Ethereum
                                 </a>
                             
@@ -271,6 +433,18 @@
                         
         				
                         
+        				
+                        
+                				<a href="/tags/#iOS" title="iOS" rel="2">
+                                    iOS
+                                </a>
+                            
+        				
+                        
+                				<a href="/tags/#Swift" title="Swift" rel="2">
+                                    Swift
+                                </a>
+                            
         				
                         
         				
@@ -306,8 +480,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "mjf1986";
-    var disqus_identifier = "/%E6%B5%8B%E8%AF%95/2018/03/12/mjf";
-    var disqus_url = "http://localhost:4000/%E6%B5%8B%E8%AF%95/2018/03/12/mjf/";
+    var disqus_identifier = "/skill/2018/08/24/markdown";
+    var disqus_url = "http://localhost:4000/skill/2018/08/24/markdown/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
