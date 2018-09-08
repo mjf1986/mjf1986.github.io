@@ -5,9 +5,44 @@
     <description>Coder | 莫剑锋，BlockChian Leraner，Software Engineer| 这里是 @莫剑锋 的个人博客，与你一起发现更大的世界。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 24 Aug 2018 12:11:16 +0800</pubDate>
-    <lastBuildDate>Fri, 24 Aug 2018 12:11:16 +0800</lastBuildDate>
+    <pubDate>Sat, 08 Sep 2018 09:56:49 +0800</pubDate>
+    <lastBuildDate>Sat, 08 Sep 2018 09:56:49 +0800</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
+    
+      <item>
+        <title>Go与C/C++函数返回局部变量地址</title>
+        <description>&lt;h1 id=&quot;go与cc语言函数返回局部变量地址&quot;&gt;Go与C/C++语言函数返回局部变量地址&lt;/h1&gt;
+
+&lt;h4 id=&quot;1cc语言返回函数中的局部变量值和指针&quot;&gt;1.C/C++语言返回函数中的局部变量值和指针&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;c语言中，一个函数可以直接返回函数定义的局部变量。函数返回后，局部变量是被系统回收的，因为局部变量被分配在栈上。能够返回是因为返回的是局部变量的副本（拷贝）。&lt;/li&gt;
+  &lt;li&gt;函数返回局部变量地址会发生错误。因为局部变量内存分配在栈空间，函数返回后，系统自动回收了局部变量。要解决，即使内存空间分配在堆上。例如malloc、new.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2go语言函数中返回变量指针&quot;&gt;2.Go语言函数中返回变量，指针&lt;/h4&gt;
+
+&lt;p&gt;​      go语言编译器会自动决定把一个变量放在栈上还是堆。编译器做逃逸分析(escape analysis)，当发现变量的作用域没有跑出函数范围，就可以放在栈上，反之则必须分配在堆。所以不用担心memory leak.&lt;/p&gt;
+
+&lt;p&gt;​	对于动态new出来的局部变量，go语言编译器也会根据是否有逃逸行为来决定是分配在堆还是栈，而不是直接分配在堆中。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 08 Sep 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/skill/2018/09/08/markdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/skill/2018/09/08/markdown/</guid>
+        
+        <category>go</category>
+        
+        <category>c++</category>
+        
+        <category>逃逸分析</category>
+        
+        <category>堆栈</category>
+        
+        
+        <category>skill</category>
+        
+      </item>
     
       <item>
         <title>搭建与运行以太坊私链</title>
